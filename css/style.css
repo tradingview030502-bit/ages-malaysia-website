@@ -1414,3 +1414,76 @@ button, input, select, textarea {
     padding: 1.5rem;
   }
 }
+
+/* --------------------------------------------------------------------------
+   16. ABOUT PAGE SPECIFIC COMPONENTS
+   -------------------------------------------------------------------------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 992px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.team-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-gold);
+}
+
+.team-avatar-placeholder {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: var(--color-surface-light);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  margin-bottom: 1.25rem;
+}
+
+.team-avatar-placeholder svg {
+  width: 44px;
+  height: 44px;
+  fill: currentColor;
+}
+
+.team-name {
+  font-size: 1.125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin-bottom: 0.25rem;
+}
+
+.team-role {
+  font-size: 0.8125rem;
+  color: var(--color-gold);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}

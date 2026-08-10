@@ -3,15 +3,426 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About AGES Malaysia - Bringing football operations, tournament management, referee coordination, and live media coverage together under one platform.">
     <title>AGES Malaysia - About Us</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>About AGES Malaysia</h1>
+
+    <!-- ==========================================================================
+         HEADER / STICKY NAVIGATION
+         ========================================================================== -->
+    <header class="site-header" id="site-header">
+        <div class="container nav-container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="brand-logo" aria-label="AGES Malaysia Home">
+                <img src="assets/images/ages-logo.png" alt="AGES Malaysia Logo">
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="tournaments.html" class="nav-link">Tournaments</a>
+                <a href="live.html" class="nav-link">Live & Highlights</a>
+                <a href="about.html" class="nav-link active" aria-current="page">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                
+                <!-- Mobile Navigation Action -->
+                <div class="mobile-cta-wrapper">
+                    <a href="contact.html" class="btn btn-primary">Book Now</a>
+                </div>
+            </nav>
+
+            <!-- Desktop Header CTA -->
+            <div class="header-cta">
+                <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </button>
+        </div>
     </header>
+
+    <!-- ==========================================================================
+         MAIN CONTENT
+         ========================================================================== -->
     <main>
+
+        <!-- HERO SECTION -->
+        <section class="page-hero" aria-label="About Us Hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <span class="hero-badge">About AGES Malaysia</span>
+                    <h1 class="page-hero-title">ABOUT AGES MALAYSIA</h1>
+                    <p class="page-hero-description">
+                        We bring football operations, tournament management and live media coverage together under one professional platform.
+                    </p>
+                    <div class="hero-actions" style="justify-content: center;">
+                        <a href="services.html" class="btn btn-primary">Explore Our Services</a>
+                        <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHO WE ARE SECTION -->
+        <section class="section who-we-are-section" aria-label="Who We Are">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text-content">
+                        <span class="section-subtitle">Dedicated Football Platform</span>
+                        <h2 class="section-title">Who We Are</h2>
+                        <p>
+                            AGES Malaysia is focused on providing organized, professional football experiences for teams, organizers, and communities across Malaysia.
+                        </p>
+                        <p>
+                            By integrating match services, tournament management, certified referee coordination, field bookings, live streaming, and media coverage, we streamline match-day operations into a single cohesive solution.
+                        </p>
+                    </div>
+
+                    <div class="about-features">
+                        <div class="feature-box">
+                            <div class="feature-number">MATCH</div>
+                            <div class="feature-label">Field & Referee Ops</div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-number">EVENT</div>
+                            <div class="feature-label">Tournament Management</div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-number">STREAM</div>
+                            <div class="feature-label">Live Media Coverage</div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-number">MEDIA</div>
+                            <div class="feature-label">Highlights & Replays</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MISSION & VISION SECTION -->
+        <section class="section mission-vision-section" aria-label="Mission and Vision">
+            <div class="container">
+                <div class="past-tournament-grid">
+                    <!-- Mission Card -->
+                    <article class="past-card">
+                        <div class="past-card-header">
+                            <span class="tournament-badge">Purpose & Focus</span>
+                            <h3 class="past-card-title">Our Mission</h3>
+                        </div>
+                        <p class="service-text">
+                            To make football matches more organized, improve match-day experiences, support teams and event organizers, and provide better media visibility for community and amateur football.
+                        </p>
+                    </article>
+
+                    <!-- Vision Card -->
+                    <article class="past-card">
+                        <div class="past-card-header">
+                            <span class="tournament-badge">Future Outlook</span>
+                            <h3 class="past-card-title">Our Vision</h3>
+                        </div>
+                        <p class="service-text">
+                            To become a trusted, reliable football event management and media platform in Malaysia, delivering consistent operational standards and high-quality broadcast coverage for every fixture.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT WE DO SECTION -->
+        <section class="section what-we-do-section" aria-label="What We Do">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Core Operational Pillars</span>
+                    <h2 class="section-title">What We Do</h2>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Card 1 -->
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                        </div>
+                        <h3 class="service-title">Match Operations</h3>
+                        <p class="service-text">Field rental, certified referee arrangement, and complete on-site match-day coordination.</p>
+                        <a href="services.html" class="service-link">View Match Services</a>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0 0 11 15.9V19H7v2h10v-2h-4v-3.1c2.21-.4 4-2.27 4.39-4.94C19.08 10.63 21 8.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>
+                        </div>
+                        <h3 class="service-title">Tournament Management</h3>
+                        <p class="service-text">Competition planning, fixture scheduling, rules enforcement, and event operations.</p>
+                        <a href="tournaments.html" class="service-link">View Tournaments</a>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+                        </div>
+                        <h3 class="service-title">Live Broadcasting</h3>
+                        <p class="service-text">HD live streaming, on-screen score graphics, match timers, and commentary setups.</p>
+                        <a href="live.html" class="service-link">View Live & Highlights</a>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                        </div>
+                        <h3 class="service-title">Media & Promotion</h3>
+                        <p class="service-text">Goal highlights, match replays, promotional media, and digital event coverage.</p>
+                        <a href="live.html" class="service-link">Explore Media</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW WE WORK SECTION -->
+        <section class="section process-section" aria-label="How We Work">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Operating Philosophy</span>
+                    <h2 class="section-title">How We Work</h2>
+                </div>
+
+                <div class="process-grid">
+                    <article class="process-card">
+                        <div class="process-step-num">01</div>
+                        <h3 class="process-title">Plan</h3>
+                        <p class="process-text">Understand match goals, schedule requirements, venue parameters, and media expectations.</p>
+                    </article>
+                    <article class="process-card">
+                        <div class="process-step-num">02</div>
+                        <h3 class="process-title">Coordinate</h3>
+                        <p class="process-text">Align field availability, certified referees, and broadcast production equipment.</p>
+                    </article>
+                    <article class="process-card">
+                        <div class="process-step-num">03</div>
+                        <h3 class="process-title">Execute</h3>
+                        <p class="process-text">Manage on-site match kickoff, pitch discipline, score tracking, and live streaming.</p>
+                    </article>
+                    <article class="process-card">
+                        <div class="process-step-num">04</div>
+                        <h3 class="process-title">Deliver</h3>
+                        <p class="process-text">Provide team replays, highlight packages, and post-match standings promptly.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR VALUES SECTION -->
+        <section class="section values-section" aria-label="Our Values">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Core Principles</span>
+                    <h2 class="section-title">Our Values</h2>
+                </div>
+
+                <div class="benefits-grid">
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">Organisation</h3>
+                        <p class="benefit-text">Structured timetables, clear match protocols, and disciplined event management.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">Reliability</h3>
+                        <p class="benefit-text">Dependable referee assignments, field bookings, and broadcast stability on match day.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">Teamwork</h3>
+                        <p class="benefit-text">Collaborating closely with team captains, venue operators, and media crews.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">Professionalism</h3>
+                        <p class="benefit-text">High operational standards across every fixture, regardless of competition size.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">Communication</h3>
+                        <p class="benefit-text">Transparent, centralized updates keeping team managers informed at every stage.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">Continuous Improvement</h3>
+                        <p class="benefit-text">Refining match logistics and media technologies after every season and tournament.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY AGES MALAYSIA SECTION -->
+        <section class="section why-ages-section" aria-label="Why Work With AGES Malaysia">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Practical Reasons</span>
+                    <h2 class="section-title">Why AGES Malaysia</h2>
+                </div>
+
+                <div class="benefits-grid">
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">All-In-One Operations</h3>
+                        <p class="benefit-text">Fields, referees, match coordination, and live streaming under a single management team.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">Football Specialization</h3>
+                        <p class="benefit-text">Operations team dedicated exclusively to football match rules, logistics, and tournaments.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">Broadcast Production</h3>
+                        <p class="benefit-text">High-definition live streaming and scoreboard graphics bringing professional visibility to games.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">Flexible Service Options</h3>
+                        <p class="benefit-text">Customizable packages tailored for single friendly matches, leagues, or weekend cups.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">Central Point of Contact</h3>
+                        <p class="benefit-text">No dealing with multiple external vendors — one coordinator handles all your game needs.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">Organised Football Environment</h3>
+                        <p class="benefit-text">Creating a fair, competitive, and enjoyable match-day setting for all participants.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR TEAM SECTION (PLACEHOLDER) -->
+        <section class="section team-section" aria-label="Our Team">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Leadership & Operations</span>
+                    <h2 class="section-title">Our Team</h2>
+                </div>
+
+                <!-- PLACEHOLDER TEAM STRUCTURE -->
+                <div class="team-grid">
+                    <article class="team-card">
+                        <div class="team-avatar-placeholder" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        </div>
+                        <h3 class="team-name">Team Member (Placeholder)</h3>
+                        <span class="team-role">Match Operations Lead (Placeholder)</span>
+                    </article>
+
+                    <article class="team-card">
+                        <div class="team-avatar-placeholder" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        </div>
+                        <h3 class="team-name">Team Member (Placeholder)</h3>
+                        <span class="team-role">Tournament Manager (Placeholder)</span>
+                    </article>
+
+                    <article class="team-card">
+                        <div class="team-avatar-placeholder" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        </div>
+                        <h3 class="team-name">Team Member (Placeholder)</h3>
+                        <span class="team-role">Broadcast Producer (Placeholder)</span>
+                    </article>
+                </div>
+
+                <p class="placeholder-notice" style="text-align: center; margin-top: 2rem;">
+                    * Official team profiles and operational staff bios will be published soon.
+                </p>
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section class="section final-cta" aria-label="Call to Action">
+            <div class="container">
+                <div class="cta-box">
+                    <h2 class="cta-title">LET'S BUILD BETTER FOOTBALL EXPERIENCES</h2>
+                    <p class="cta-description">
+                        Partner with AGES Malaysia for your next match, tournament, or live broadcast.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="services.html" class="btn btn-primary">Explore Services</a>
+                        <a href="tournaments.html" class="btn btn-secondary">View Tournaments</a>
+                        <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Info -->
+                <div class="footer-brand">
+                    <a href="index.html">
+                        <img src="assets/images/ages-logo.png" alt="AGES Malaysia Logo">
+                    </a>
+                    <p class="footer-tagline">
+                        We bring the game to life — handling football operations from kick-off to final whistle.
+                    </p>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="tournaments.html">Tournaments</a></li>
+                        <li><a href="live.html">Live & Highlights</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Links -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Match Services</a></li>
+                        <li><a href="services.html">Field Rental</a></li>
+                        <li><a href="services.html">Referee Operations</a></li>
+                        <li><a href="services.html">Tournament Management</a></li>
+                        <li><a href="services.html">Live Broadcasting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Socials -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Contact Us</h4>
+                    <div class="footer-links">
+                        <!-- PLACEHOLDER BUSINESS DATA -->
+                        <p class="footer-tagline">Klang Valley, Malaysia (Placeholder)</p>
+                        <p class="footer-tagline">info@agesmalaysia.com (Placeholder)</p>
+                        <p class="placeholder-notice">* Official contact details will be updated soon.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 AGES Malaysia. All rights reserved.</p>
+                <div class="social-links">
+                    <!-- PLACEHOLDER SOCIAL MEDIA LINKS -->
+                    <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+                    <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+                    <a href="#" class="social-link" aria-label="YouTube">YouTube</a>
+                    <a href="#" class="social-link" aria-label="TikTok">TikTok</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
 </body>
 </html>
