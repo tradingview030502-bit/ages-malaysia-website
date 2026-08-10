@@ -3,15 +3,472 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact AGES Malaysia - Send an enquiry for match services, field rental, referee arrangements, tournament management, and live streaming.">
     <title>AGES Malaysia - Contact Us</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Contact Us</h1>
+
+    <!-- ==========================================================================
+         HEADER / STICKY NAVIGATION
+         ========================================================================== -->
+    <header class="site-header" id="site-header">
+        <div class="container nav-container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="brand-logo" aria-label="AGES Malaysia Home">
+                <img src="assets/images/ages-logo.png" alt="AGES Malaysia Logo">
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="tournaments.html" class="nav-link">Tournaments</a>
+                <a href="live.html" class="nav-link">Live & Highlights</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link active" aria-current="page">Contact</a>
+                
+                <!-- Mobile Navigation Action -->
+                <div class="mobile-cta-wrapper">
+                    <a href="#enquiry-form" class="btn btn-primary">Book Now</a>
+                </div>
+            </nav>
+
+            <!-- Desktop Header CTA -->
+            <div class="header-cta">
+                <a href="#enquiry-form" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </button>
+        </div>
     </header>
+
+    <!-- ==========================================================================
+         MAIN CONTENT
+         ========================================================================== -->
     <main>
+
+        <!-- HERO SECTION -->
+        <section class="page-hero" aria-label="Contact Us Hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <span class="hero-badge">GET IN TOUCH</span>
+                    <h1 class="page-hero-title">LET'S PLAN YOUR NEXT MATCH</h1>
+                    <p class="page-hero-description">
+                        Tell us what you are planning and the AGES Malaysia team can help you identify the right match, tournament or media solution.
+                    </p>
+                    <div class="hero-actions" style="justify-content: center;">
+                        <a href="#enquiry-form" class="btn btn-primary">Send an Enquiry</a>
+                        <a href="services.html" class="btn btn-secondary">Explore Services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT INTRODUCTION SECTION -->
+        <section class="section intro-section" aria-label="How Can We Help">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Enquiry Categories</span>
+                    <h2 class="section-title">How Can We Help?</h2>
+                </div>
+
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                        </div>
+                        <h3 class="service-title">Match Services</h3>
+                        <p class="service-text">Match-day operations, venue coordination and referee arrangements.</p>
+                        <a href="#enquiry-form" class="service-link">Enquire Now</a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0 0 11 15.9V19H7v2h10v-2h-4v-3.1c2.21-.4 4-2.27 4.39-4.94C19.08 10.63 21 8.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>
+                        </div>
+                        <h3 class="service-title">Tournaments</h3>
+                        <p class="service-text">Tournament planning, fixtures, scheduling and event operations.</p>
+                        <a href="#enquiry-form" class="service-link">Enquire Now</a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+                        </div>
+                        <h3 class="service-title">Live Streaming</h3>
+                        <p class="service-text">Live match broadcasting, recording and media coverage.</p>
+                        <a href="#enquiry-form" class="service-link">Enquire Now</a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </div>
+                        <h3 class="service-title">General Enquiry</h3>
+                        <p class="service-text">Other football-related enquiries and collaboration discussions.</p>
+                        <a href="#enquiry-form" class="service-link">Enquire Now</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENQUIRY FORM SECTION -->
+        <section class="section form-section" id="enquiry-form" aria-label="Enquiry Form">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Direct Communication</span>
+                    <h2 class="section-title">Send Us An Enquiry</h2>
+                </div>
+
+                <div class="enquiry-form-card">
+                    <form id="enquiry-form-element" novalidate>
+                        <div class="form-grid-2">
+                            <!-- Full Name -->
+                            <div class="form-group">
+                                <label for="form-name" class="form-label">Full Name <span class="required">*</span></label>
+                                <input type="text" id="form-name" name="name" class="form-control" placeholder="Enter your name" required>
+                            </div>
+
+                            <!-- Email Address -->
+                            <div class="form-group">
+                                <label for="form-email" class="form-label">Email Address <span class="required">*</span></label>
+                                <input type="email" id="form-email" name="email" class="form-control" placeholder="name@example.com" required>
+                            </div>
+
+                            <!-- Phone Number -->
+                            <div class="form-group">
+                                <label for="form-phone" class="form-label">Phone Number</label>
+                                <input type="tel" id="form-phone" name="phone" class="form-control" placeholder="e.g. +60 12-345 6789">
+                            </div>
+
+                            <!-- Organisation / Team -->
+                            <div class="form-group">
+                                <label for="form-org" class="form-label">Organisation / Team</label>
+                                <input type="text" id="form-org" name="organisation" class="form-control" placeholder="Team or company name">
+                            </div>
+
+                            <!-- Enquiry Type -->
+                            <div class="form-group">
+                                <label for="form-type" class="form-label">Enquiry Type <span class="required">*</span></label>
+                                <select id="form-type" name="enquiry_type" class="form-select" required>
+                                    <option value="" disabled selected>Select Enquiry Type</option>
+                                    <option value="Match Service">Match Service</option>
+                                    <option value="Field / Venue Rental">Field / Venue Rental</option>
+                                    <option value="Referee Arrangement">Referee Arrangement</option>
+                                    <option value="Tournament Management">Tournament Management</option>
+                                    <option value="Live Streaming">Live Streaming</option>
+                                    <option value="Media / Highlights">Media / Highlights</option>
+                                    <option value="General Enquiry">General Enquiry</option>
+                                </select>
+                            </div>
+
+                            <!-- Preferred Date -->
+                            <div class="form-group">
+                                <label for="form-date" class="form-label">Preferred Date</label>
+                                <input type="date" id="form-date" name="preferred_date" class="form-control">
+                            </div>
+
+                            <!-- Location / Venue -->
+                            <div class="form-group">
+                                <label for="form-location" class="form-label">Location / Venue</label>
+                                <input type="text" id="form-location" name="location" class="form-control" placeholder="Preferred location in Klang Valley">
+                            </div>
+
+                            <!-- Number of Teams -->
+                            <div class="form-group">
+                                <label for="form-teams" class="form-label">Number of Teams</label>
+                                <input type="text" id="form-teams" name="teams" class="form-control" placeholder="e.g. 2 teams, 8 teams">
+                            </div>
+
+                            <!-- Message / Requirements -->
+                            <div class="form-group full-width">
+                                <label for="form-message" class="form-label">Message / Requirements <span class="required">*</span></label>
+                                <textarea id="form-message" name="message" class="form-control" placeholder="Describe your match format, broadcast preferences, or event details..." required></textarea>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 1rem;">
+                            <button type="submit" class="btn btn-primary">SEND ENQUIRY</button>
+                        </div>
+                    </form>
+
+                    <!-- Transparent Notice Box -->
+                    <div class="form-notice-box" id="form-notice-box">
+                        <h4 class="form-notice-title">Enquiry Processing Notice</h4>
+                        <p class="form-notice-text">
+                            Thank you for your enquiry. Online form submission processing is currently being prepared for AGES Malaysia. Official contact channels and direct submission details will be updated soon.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIRECT CONTACT & SERVICE AREA SECTION -->
+        <section class="section contact-info-section" aria-label="Direct Contact & Service Coverage">
+            <div class="container">
+                <div class="about-grid">
+                    <!-- Direct Contact -->
+                    <div class="about-text-content">
+                        <span class="section-subtitle">Official Channels</span>
+                        <h2 class="section-title">Contact Information</h2>
+                        
+                        <div class="feature-list" style="margin-top: 1rem;">
+                            <div class="feature-item">
+                                <div class="feature-item-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                </div>
+                                <span><strong>Email:</strong> Official email coming soon (Placeholder)</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-item-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                                </div>
+                                <span><strong>Phone / WhatsApp:</strong> Official contact number coming soon (Placeholder)</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-item-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                </div>
+                                <span><strong>Location:</strong> Klang Valley, Malaysia</span>
+                            </div>
+                        </div>
+
+                        <p class="placeholder-notice">
+                            * Official contact details will be updated once confirmed.
+                        </p>
+                    </div>
+
+                    <!-- Service Coverage -->
+                    <div class="about-text-content">
+                        <span class="section-subtitle">Geographic Scope</span>
+                        <h2 class="section-title">Service Coverage</h2>
+                        <p>
+                            AGES Malaysia primarily coordinates football services within Klang Valley, with selected locations considered based on venue availability and event requirements.
+                        </p>
+                        <div class="feature-box" style="margin-top: 1rem;">
+                            <div class="feature-number">KLANG VALLEY</div>
+                            <div class="feature-label">Primary Operational Zone</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENQUIRY PROCESS SECTION -->
+        <section class="section process-section" aria-label="Enquiry Process">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">What Happens Next?</span>
+                    <h2 class="section-title">Enquiry Process</h2>
+                </div>
+
+                <div class="process-grid">
+                    <article class="process-card">
+                        <div class="process-step-num">01</div>
+                        <h3 class="process-title">Send Your Enquiry</h3>
+                        <p class="process-text">Provide your match, tournament or broadcast requirements using the form or official channels.</p>
+                    </article>
+                    <article class="process-card">
+                        <div class="process-step-num">02</div>
+                        <h3 class="process-title">Requirements Review</h3>
+                        <p class="process-text">AGES Malaysia reviews the requested service, preferred date, location, and operational parameters.</p>
+                    </article>
+                    <article class="process-card">
+                        <div class="process-step-num">03</div>
+                        <h3 class="process-title">Coordination</h3>
+                        <p class="process-text">Relevant venue booking, certified referees, or broadcast setups are coordinated based on availability.</p>
+                    </article>
+                    <article class="process-card">
+                        <div class="process-step-num">04</div>
+                        <h3 class="process-title">Confirmation</h3>
+                        <p class="process-text">Final service details and event schedules are confirmed directly with the client before match day.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="section faq-section" aria-label="Frequently Asked Questions">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Got Questions?</span>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                </div>
+
+                <div class="faq-list">
+                    <!-- FAQ 1 -->
+                    <article class="faq-item">
+                        <button class="faq-button" aria-expanded="false">
+                            <span>What information should I include in my enquiry?</span>
+                            <div class="faq-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                            </div>
+                        </button>
+                        <div class="faq-content">
+                            Include your preferred match date, desired venue location in Klang Valley, number of teams, and specific service needs (e.g. field rental, referees, live streaming).
+                        </div>
+                    </article>
+
+                    <!-- FAQ 2 -->
+                    <article class="faq-item">
+                        <button class="faq-button" aria-expanded="false">
+                            <span>Can AGES Malaysia arrange both the venue and referees?</span>
+                            <div class="faq-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                            </div>
+                        </button>
+                        <div class="faq-content">
+                            Yes, our Complete Match Package combines football field booking, certified referee arrangement, and broadcast setup under one unified management team.
+                        </div>
+                    </article>
+
+                    <!-- FAQ 3 -->
+                    <article class="faq-item">
+                        <button class="faq-button" aria-expanded="false">
+                            <span>Can I request live streaming as a standalone service?</span>
+                            <div class="faq-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                            </div>
+                        </button>
+                        <div class="faq-content">
+                            Yes, we offer standalone live broadcasting services complete with HD streams, on-screen scoreboard bugs, team logos, and match timers for existing fixtures.
+                        </div>
+                    </article>
+
+                    <!-- FAQ 4 -->
+                    <article class="faq-item">
+                        <button class="faq-button" aria-expanded="false">
+                            <span>Can AGES Malaysia support tournaments?</span>
+                            <div class="faq-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                            </div>
+                        </button>
+                        <div class="faq-content">
+                            Yes, we provide end-to-end tournament management, including fixture planning, point standings tracking, referee rosters, venue operations, and tournament media.
+                        </div>
+                    </article>
+
+                    <!-- FAQ 5 -->
+                    <article class="faq-item">
+                        <button class="faq-button" aria-expanded="false">
+                            <span>Which locations do you cover?</span>
+                            <div class="faq-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                            </div>
+                        </button>
+                        <div class="faq-content">
+                            Our services are primarily focused on Klang Valley, with selected external venues considered depending on match requirements and scheduling availability.
+                        </div>
+                    </article>
+
+                    <!-- FAQ 6 -->
+                    <article class="faq-item">
+                        <button class="faq-button" aria-expanded="false">
+                            <span>How is pricing determined?</span>
+                            <div class="faq-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                            </div>
+                        </button>
+                        <div class="faq-content">
+                            Pricing depends on service selection, venue rental costs, match/event duration, number of teams, referee requirements, and broadcast specifications.
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section class="section final-cta" aria-label="Call to Action">
+            <div class="container">
+                <div class="cta-box">
+                    <h2 class="cta-title">READY TO PLAN YOUR MATCH?</h2>
+                    <p class="cta-description">
+                        Start with your event requirements and let AGES Malaysia help structure the right football service package.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#enquiry-form" class="btn btn-primary">SEND AN ENQUIRY</a>
+                        <a href="services.html" class="btn btn-secondary">EXPLORE SERVICES</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Info -->
+                <div class="footer-brand">
+                    <a href="index.html">
+                        <img src="assets/images/ages-logo.png" alt="AGES Malaysia Logo">
+                    </a>
+                    <p class="footer-tagline">
+                        We bring the game to life — handling football operations from kick-off to final whistle.
+                    </p>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="tournaments.html">Tournaments</a></li>
+                        <li><a href="live.html">Live & Highlights</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Links -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Match Services</a></li>
+                        <li><a href="services.html">Field Rental</a></li>
+                        <li><a href="services.html">Referee Operations</a></li>
+                        <li><a href="services.html">Tournament Management</a></li>
+                        <li><a href="services.html">Live Broadcasting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Socials -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Contact Us</h4>
+                    <div class="footer-links">
+                        <!-- PLACEHOLDER BUSINESS DATA -->
+                        <p class="footer-tagline">Klang Valley, Malaysia (Placeholder)</p>
+                        <p class="footer-tagline">info@agesmalaysia.com (Placeholder)</p>
+                        <p class="placeholder-notice">* Official contact details will be updated soon.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 AGES Malaysia. All rights reserved.</p>
+                <div class="social-links">
+                    <!-- PLACEHOLDER SOCIAL MEDIA LINKS -->
+                    <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+                    <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+                    <a href="#" class="social-link" aria-label="YouTube">YouTube</a>
+                    <a href="#" class="social-link" aria-label="TikTok">TikTok</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
 </body>
 </html>
