@@ -1675,3 +1675,39 @@ textarea.form-control {
 .faq-item.is-open .faq-content {
   display: block;
 }
+
+/* --------------------------------------------------------------------------
+   18. SMALL SCREEN BREAKPOINTS & HELPER UTILITIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 400px) {
+  .hero-title, .page-hero-title {
+    font-size: 1.875rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 1.5rem;
+}
+
+.mt-3 {
+  margin-top: 2rem;
+}
+
+.mt-4 {
+  margin-top: 3rem;
+}
+
+.justify-center {
+  justify-content: center;
+}
