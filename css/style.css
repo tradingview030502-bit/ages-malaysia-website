@@ -1017,3 +1017,219 @@ button, input, select, textarea {
 .social-link:hover {
   color: var(--color-gold);
 }
+
+/* --------------------------------------------------------------------------
+   13. INNER PAGE HERO & SERVICES SPECIFIC COMPONENTS
+   -------------------------------------------------------------------------- */
+.page-hero {
+  position: relative;
+  padding: 5rem 0 4rem 0;
+  background-color: var(--color-black);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
+    linear-gradient(to bottom, rgba(8, 8, 8, 0.5), rgba(8, 8, 8, 1));
+  border-bottom: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.page-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-hero-title {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.page-hero-description {
+  font-size: 1.1875rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 3.5rem 0 3rem 0;
+  }
+  .page-hero-title {
+    font-size: 2.25rem;
+  }
+  .page-hero-description {
+    font-size: 1rem;
+  }
+}
+
+/* Feature & Option Lists */
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  color: var(--color-white);
+  font-size: 0.9375rem;
+}
+
+.feature-item-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.feature-item-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* Package & Service Highlight Cards */
+.package-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 1rem;
+  transition: border-color var(--transition-normal);
+}
+
+.package-card:hover {
+  border-color: var(--color-border-bright);
+}
+
+@media (max-width: 992px) {
+  .package-card {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: 2rem;
+  }
+}
+
+.price-disclaimer {
+  background-color: var(--color-black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+/* Process Grid (How It Works) */
+.process-section {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 992px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.process-card {
+  background-color: var(--color-black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.process-step-num {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.process-title {
+  font-size: 1.125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.process-text {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+/* Benefits Grid (Why AGES Malaysia) */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 992px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.benefit-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-gold);
+}
+
+.benefit-title {
+  font-size: 1.125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin-bottom: 0.75rem;
+}
+
+.benefit-text {
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
