@@ -84,7 +84,7 @@ function closeMobileMenu(navMenu, toggleBtn) {
 }
 
 /**
- * Handles client-side contact form validation and transparent feedback message.
+ * Handles client-side contact form validation and WhatsApp enquiry message generation.
  */
 function initContactForm() {
   const form = document.querySelector('#enquiry-form-element');
@@ -96,12 +96,17 @@ function initContactForm() {
 
       const name = form.querySelector('[name="name"]');
       const email = form.querySelector('[name="email"]');
+      const phone = form.querySelector('[name="phone"]');
+      const organisation = form.querySelector('[name="organisation"]');
       const enquiryType = form.querySelector('[name="enquiry_type"]');
+      const preferredDate = form.querySelector('[name="preferred_date"]');
+      const location = form.querySelector('[name="location"]');
+      const teams = form.querySelector('[name="teams"]');
       const message = form.querySelector('[name="message"]');
 
       let isValid = true;
 
-      // Basic HTML5 Validity & Custom Checks
+      // Validate Required Fields (Name, Email, Enquiry Type, Message)
       [name, email, enquiryType, message].forEach(field => {
         if (!field || !field.value.trim()) {
           isValid = false;
@@ -115,10 +120,36 @@ function initContactForm() {
         return;
       }
 
-      // Display transparent notice explaining static environment status
+      // Build structured WhatsApp message
+      const textLines = [
+        "Hello AGES Malaysia,",
+        "",
+        "I would like to make an enquiry.",
+        "",
+        `Name: ${name ? name.value.trim() : ''}`,
+        `Email: ${email ? email.value.trim() : ''}`,
+        `Phone / WhatsApp: ${phone && phone.value.trim() ? phone.value.trim() : 'N/A'}`,
+        `Organisation / Team: ${organisation && organisation.value.trim() ? organisation.value.trim() : 'N/A'}`,
+        `Enquiry Type: ${enquiryType ? enquiryType.value.trim() : ''}`,
+        `Preferred Date: ${preferredDate && preferredDate.value.trim() ? preferredDate.value.trim() : 'N/A'}`,
+        `Location / Venue: ${location && location.value.trim() ? location.value.trim() : 'N/A'}`,
+        `Number of Teams: ${teams && teams.value.trim() ? teams.value.trim() : 'N/A'}`,
+        "",
+        "Message / Requirements:",
+        `${message ? message.value.trim() : ''}`,
+        "",
+        "Thank you."
+      ];
+
+      const fullText = textLines.join('\n');
+      const whatsappUrl = `https://wa.me/601136644476?text=${encodeURIComponent(fullText)}`;
+
+      // Display informational notice
       noticeBox.classList.add('visible');
       noticeBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      form.reset();
+
+      // Open WhatsApp directly without clearing form inputs
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     });
   }
 }
