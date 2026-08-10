@@ -3,15 +3,437 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGES Malaysia - Live Broadcast</title>
+    <meta name="description" content="AGES Malaysia Live & Highlights - Watch live football broadcasts, tournament replays, top goals, and match highlights in one media hub.">
+    <title>AGES Malaysia - Live & Highlights</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Live Stream</h1>
+
+    <!-- ==========================================================================
+         HEADER / STICKY NAVIGATION
+         ========================================================================== -->
+    <header class="site-header" id="site-header">
+        <div class="container nav-container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="brand-logo" aria-label="AGES Malaysia Home">
+                <img src="assets/images/ages-logo.png" alt="AGES Malaysia Logo">
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="tournaments.html" class="nav-link">Tournaments</a>
+                <a href="live.html" class="nav-link active" aria-current="page">Live & Highlights</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                
+                <!-- Mobile Navigation Action -->
+                <div class="mobile-cta-wrapper">
+                    <a href="contact.html" class="btn btn-primary">Book Now</a>
+                </div>
+            </nav>
+
+            <!-- Desktop Header CTA -->
+            <div class="header-cta">
+                <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </button>
+        </div>
     </header>
+
+    <!-- ==========================================================================
+         MAIN CONTENT
+         ========================================================================== -->
     <main>
+
+        <!-- HERO SECTION -->
+        <section class="page-hero" aria-label="Live and Highlights Hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <span class="hero-badge">AGES Broadcast Hub</span>
+                    <h1 class="page-hero-title">LIVE & HIGHLIGHTS</h1>
+                    <p class="page-hero-description">
+                        Watch AGES Malaysia matches, tournament coverage, full replays and key moments in one place.
+                    </p>
+                    <div class="hero-actions" style="justify-content: center;">
+                        <a href="#live-now" class="btn btn-primary">Watch Live</a>
+                        <a href="#highlights" class="btn btn-secondary">Latest Highlights</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIVE NOW SECTION -->
+        <section class="section live-now-section" id="live-now" aria-label="Live Stream Player">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Current Broadcast</span>
+                    <h2 class="section-title">Live Now</h2>
+                </div>
+
+                <!-- PLACEHOLDER MEDIA FRAME -->
+                <div class="live-player-card">
+                    <div class="player-screen">
+                        <span class="media-tag tag-live" style="position: relative; align-self: flex-start;">LIVE BROADCAST (Placeholder)</span>
+                        
+                        <div class="player-screen-center">
+                            <div class="player-play-btn" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                            <span class="detail-label" style="color: var(--color-gold);">Broadcast Feed Standing By (Placeholder)</span>
+                        </div>
+
+                        <span class="media-info" style="margin-bottom: 0;">HD 1080p Stream</span>
+                    </div>
+
+                    <div class="player-details">
+                        <span class="tournament-badge">Featured Matchday</span>
+                        <h3 class="tournament-name" style="font-size: 1.5rem; margin-top: 0.5rem;">AGES Championship Match (Placeholder)</h3>
+                        <p class="tournament-description" style="margin-top: 0.5rem; margin-bottom: 1.5rem;">
+                            Live match stream featuring real-time scoreboard graphics, team line-ups, and match commentary.
+                        </p>
+
+                        <div class="tournament-details" style="margin-bottom: 2rem;">
+                            <div class="detail-item">
+                                <span class="detail-label">Competition</span>
+                                <span class="detail-value">Championship Series (Placeholder)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Kickoff Time</span>
+                                <span class="detail-value">Scheduled TBD (Placeholder)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <a href="#live-now" class="btn btn-primary btn-sm">Watch Live Stream</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LATEST REPLAYS SECTION -->
+        <section class="section replays-section" aria-label="Latest Replays">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Full Matches</span>
+                    <h2 class="section-title">Latest Replays</h2>
+                </div>
+
+                <div class="media-grid">
+                    <!-- Replay 1 -->
+                    <article class="media-card">
+                        <div class="media-thumbnail">
+                            <span class="media-tag tag-replay">Full Replay</span>
+                            <div class="play-button" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="media-content">
+                            <h3 class="media-title">Championship Final Replay (Placeholder)</h3>
+                            <p class="media-info">Tournament Cup &bull; Season 2025 (Placeholder)</p>
+                            <a href="live.html" class="service-link">View Full Replay</a>
+                        </div>
+                    </article>
+
+                    <!-- Replay 2 -->
+                    <article class="media-card">
+                        <div class="media-thumbnail">
+                            <span class="media-tag tag-replay">Full Replay</span>
+                            <div class="play-button" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="media-content">
+                            <h3 class="media-title">Semi-Final Matchday Replay (Placeholder)</h3>
+                            <p class="media-info">League Fixture &bull; Season 2025 (Placeholder)</p>
+                            <a href="live.html" class="service-link">View Full Replay</a>
+                        </div>
+                    </article>
+
+                    <!-- Replay 3 -->
+                    <article class="media-card">
+                        <div class="media-thumbnail">
+                            <span class="media-tag tag-replay">Full Replay</span>
+                            <div class="play-button" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="media-content">
+                            <h3 class="media-title">Group Stage Feature Match (Placeholder)</h3>
+                            <p class="media-info">Group Phase &bull; Season 2025 (Placeholder)</p>
+                            <a href="live.html" class="service-link">View Full Replay</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- MATCH HIGHLIGHTS SECTION -->
+        <section class="section highlights-section" id="highlights" aria-label="Match Highlights">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Key Moments</span>
+                    <h2 class="section-title">Match Highlights</h2>
+                </div>
+
+                <div class="media-grid">
+                    <!-- Highlight 1 -->
+                    <article class="media-card">
+                        <div class="media-thumbnail">
+                            <span class="media-tag tag-highlights">Top Goals</span>
+                            <div class="play-button" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="media-content">
+                            <h3 class="media-title">Best Goals Of The Month</h3>
+                            <p class="media-info">Sensational long-range strikes and team goals from recent fixtures.</p>
+                            <a href="live.html" class="service-link">Watch Top Goals</a>
+                        </div>
+                    </article>
+
+                    <!-- Highlight 2 -->
+                    <article class="media-card">
+                        <div class="media-thumbnail">
+                            <span class="media-tag tag-highlights">Best Saves</span>
+                            <div class="play-button" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="media-content">
+                            <h3 class="media-title">Goalkeeper Highlight Reel</h3>
+                            <p class="media-info">Crucial penalty saves and acrobatic stops from tournament goalkeepers.</p>
+                            <a href="live.html" class="service-link">Watch Best Saves</a>
+                        </div>
+                    </article>
+
+                    <!-- Highlight 3 -->
+                    <article class="media-card">
+                        <div class="media-thumbnail">
+                            <span class="media-tag tag-highlights">Key Moments</span>
+                            <div class="play-button" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="media-content">
+                            <h3 class="media-title">Matchday Turning Points</h3>
+                            <p class="media-info">Decisive tactical moments, counter-attacks, and extra-time winners.</p>
+                            <a href="live.html" class="service-link">Watch Key Moments</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOURNAMENT COVERAGE SECTION -->
+        <section class="section coverage-section" aria-label="Tournament Media Coverage">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text-content">
+                        <span class="section-subtitle">Media Production</span>
+                        <h2 class="section-title">Tournament Coverage</h2>
+                        <p>
+                            AGES Malaysia provides comprehensive media coverage for football tournaments, capturing the intensity of competition from opening kickoffs to trophy celebrations.
+                        </p>
+                        <p>
+                            Our media scope covers live matches, final replays, highlight packages, player reactions, and custom broadcast graphics designed to elevate team visibility.
+                        </p>
+                        <div>
+                            <a href="tournaments.html" class="btn btn-primary">View Tournaments</a>
+                        </div>
+                    </div>
+
+                    <div class="about-features">
+                        <div class="feature-box">
+                            <div class="feature-number">LIVE</div>
+                            <div class="feature-label">Match Broadcasts</div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-number">REPLAY</div>
+                            <div class="feature-label">Full Game Archives</div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-number">CLIP</div>
+                            <div class="feature-label">Goal Highlights</div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-number">TALK</div>
+                            <div class="feature-label">Post-Match Moments</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MEDIA FEATURES SECTION -->
+        <section class="section media-features-section" aria-label="Broadcast Features">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Broadcast Features</span>
+                    <h2 class="section-title">Available Service Options</h2>
+                </div>
+
+                <div class="benefits-grid">
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">Live Scoreboard Bug</h3>
+                        <p class="benefit-text">Real-time match clock and score bug graphics overlaying the broadcast feed.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">Match Timer & Period</h3>
+                        <p class="benefit-text">Clear display of half-time intervals, stoppage time, and extra-time periods.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">Team & Player Graphics</h3>
+                        <p class="benefit-text">Pre-match line-up graphics and goalscorer name pop-ups during key moments.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">Replay & Recording Archives</h3>
+                        <p class="benefit-text">Full match recording stored for post-game analysis and team social media clips.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">Commentary-Ready Audio</h3>
+                        <p class="benefit-text">Dedicated audio channel configuration compatible with live match commentators.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h3 class="benefit-title">Multi-Platform Distribution</h3>
+                        <p class="benefit-text">Stream directly to team YouTube channels, Facebook pages, or private destinations.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW TO GET YOUR MATCH LIVE SECTION -->
+        <section class="section process-section" aria-label="How To Get Your Match Live">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Broadcast Workflow</span>
+                    <h2 class="section-title">How To Get Your Match Live</h2>
+                </div>
+
+                <div class="process-grid">
+                    <article class="process-card">
+                        <div class="process-step-num">01</div>
+                        <h3 class="process-title">Contact AGES</h3>
+                        <p class="process-text">Reach out with your fixture date, venue location, and expected kick-off time.</p>
+                    </article>
+                    <article class="process-card">
+                        <div class="process-step-num">02</div>
+                        <h3 class="process-title">Confirm Match Details</h3>
+                        <p class="process-text">Share team names, logos, and squad numbers for on-screen broadcast graphics.</p>
+                    </article>
+                    <article class="process-card">
+                        <div class="process-step-num">03</div>
+                        <h3 class="process-title">Technical Setup</h3>
+                        <p class="process-text">Our broadcast team configures cameras, audio feeds, and stream destination keys.</p>
+                    </article>
+                    <article class="process-card">
+                        <div class="process-step-num">04</div>
+                        <h3 class="process-title">Go Live</h3>
+                        <p class="process-text">Broadcast your match live to your audience with full on-screen score tracking.</p>
+                    </article>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="services.html" class="btn btn-primary">Book Live Streaming</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section class="section final-cta" aria-label="Call to Action">
+            <div class="container">
+                <div class="cta-box">
+                    <h2 class="cta-title">PUT YOUR MATCH ON SCREEN</h2>
+                    <p class="cta-description">
+                        Ready to broadcast your match or tournament to fans and supporters? AGES Malaysia provides complete live streaming solutions.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="services.html" class="btn btn-primary">Book Live Streaming</a>
+                        <a href="services.html" class="btn btn-secondary">View Services</a>
+                        <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Info -->
+                <div class="footer-brand">
+                    <a href="index.html">
+                        <img src="assets/images/ages-logo.png" alt="AGES Malaysia Logo">
+                    </a>
+                    <p class="footer-tagline">
+                        We bring the game to life — handling football operations from kick-off to final whistle.
+                    </p>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="tournaments.html">Tournaments</a></li>
+                        <li><a href="live.html">Live & Highlights</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Links -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Match Services</a></li>
+                        <li><a href="services.html">Field Rental</a></li>
+                        <li><a href="services.html">Referee Operations</a></li>
+                        <li><a href="services.html">Tournament Management</a></li>
+                        <li><a href="services.html">Live Broadcasting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Socials -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Contact Us</h4>
+                    <div class="footer-links">
+                        <!-- PLACEHOLDER BUSINESS DATA -->
+                        <p class="footer-tagline">Klang Valley, Malaysia (Placeholder)</p>
+                        <p class="footer-tagline">info@agesmalaysia.com (Placeholder)</p>
+                        <p class="placeholder-notice">* Official contact details will be updated soon.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 AGES Malaysia. All rights reserved.</p>
+                <div class="social-links">
+                    <!-- PLACEHOLDER SOCIAL MEDIA LINKS -->
+                    <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+                    <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+                    <a href="#" class="social-link" aria-label="YouTube">YouTube</a>
+                    <a href="#" class="social-link" aria-label="TikTok">TikTok</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
 </body>
 </html>
