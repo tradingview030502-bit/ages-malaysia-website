@@ -124,14 +124,17 @@ async function loadHomeData(client) {
     }
     renderHomeAnnouncements(announcements || []);
 
-    // 2. Fetch Active Tournaments
-    const { data: tournaments } = await client
+    // 2. Fetch Active Published Tournaments
+    const { data: tournaments, error: tourneyError } = await client
       .from('tournaments')
       .select('*')
       .eq('status', 'published')
-      .order('created_at', { ascending: false })
+      .order('event_date', { ascending: true })
       .limit(3);
 
+    if (tourneyError) {
+      console.warn('Error fetching home tournaments:', tourneyError.message);
+    }
     if (tournaments && tournaments.length > 0) {
       renderHomeTournaments(tournaments);
     }
@@ -159,27 +162,18 @@ async function loadHomeData(client) {
  */
 async function loadTournamentsData(client) {
   try {
-    const { data: tournaments } = await client
+    const { data: tournaments, error } = await client
       .from('tournaments')
       .select('*')
       .eq('status', 'published')
-      .order('created_at', { ascending: false });
+      .order('event_date', { ascending: true });
 
-    if (tournaments && tournaments.length > 0) {
-      // Dynamic tournament data exists - can populate or augment existing cards
+    if (error) {
+      console.warn('Error fetching tournaments:', error.message);
+    } else if (tournaments && tournaments.length > 0) {
       console.log(`Loaded ${tournaments.length} published tournaments from Supabase.`);
+      renderTournamentsList(tournaments);
     }
-
-    const { data: results } = await client
-      .from('results')
-      .select('*')
-      .eq('status', 'published')
-      .order('match_date', { ascending: false });
-
-    if (results && results.length > 0) {
-      console.log(`Loaded ${results.length} published match results from Supabase.`);
-    }
-
   } catch (err) {
     console.error('Error loading tournaments data:', err);
   }
@@ -216,7 +210,6 @@ async function loadContactData(client) {
       .single();
 
     if (data) {
-      // Update contact page elements if needed
       console.log('Contact settings loaded successfully.');
     }
   } catch (err) {
@@ -247,7 +240,6 @@ function renderHomeAnnouncements(items) {
     const formattedDate = rawDate ? new Date(rawDate).toLocaleDateString('en-MY', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
     const tourneyTitle = item.tournaments && item.tournaments.title ? item.tournaments.title : null;
 
-    // Truncate long content
     let shortContent = item.content || '';
     if (shortContent.length > 140) {
       shortContent = shortContent.substring(0, 137) + '...';
@@ -278,14 +270,251 @@ function renderHomeAnnouncements(items) {
 }
 
 function renderHomeTournaments(items) {
-  // Enhances or maintains tournament previews
+  const container = document.querySelector('#home-tournament-container');
+  if (!container || !items || items.length === 0) return;
+
+  const item = items[0];
+  const formattedDate = formatEventDate(item.event_date);
+  const timeStr = formatTime(item.start_time, item.end_time);
+  const venueStr = item.venue ? (item.location ? `${item.venue}, ${item.location}` : item.venue) : (item.location || 'Location TBD');
+  const catStr = item.category || item.age_category || 'Open Division';
+  const teamsStr = item.number_of_teams ? `${item.number_of_teams} Teams Max` : 'Teams Registering';
+  const feeStr = formatFee(item.registration_fee, 'RM TBD');
+  const prizeStr = item.prize_champion ? `RM ${item.prize_champion}` : (item.prize_runner_up ? 'Cash Prizes' : 'Trophies & Medals');
+  const waUrl = buildWhatsAppUrl(item.registration_phone, item.title);
+  const contactName = item.registration_contact ? `WhatsApp ${item.registration_contact}` : 'Register Team';
+
+  let html = `
+    <div class="section-header">
+      <span class="section-subtitle">Compete & Excel</span>
+      <h2 class="section-title">Upcoming Tournament</h2>
+    </div>
+
+    <div class="tournament-card">
+      <div class="tournament-info">
+        <div class="tournament-header">
+          <span class="tournament-badge">UPCOMING EVENT</span>
+          <h3 class="tournament-name">${escapeHtml(item.title)}</h3>
+        </div>
+        ${item.description ? `<p class="tournament-description">${escapeHtml(item.description)}</p>` : ''}
+
+        <div class="tournament-details">
+          ${formattedDate ? `
+            <div class="detail-item">
+              <span class="detail-label">Date</span>
+              <span class="detail-value">${escapeHtml(formattedDate)}</span>
+            </div>
+          ` : ''}
+          ${timeStr ? `
+            <div class="detail-item">
+              <span class="detail-label">Time</span>
+              <span class="detail-value">${escapeHtml(timeStr)}</span>
+            </div>
+          ` : ''}
+          <div class="detail-item">
+            <span class="detail-label">Venue</span>
+            <span class="detail-value">${escapeHtml(venueStr)}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Category</span>
+            <span class="detail-value">${escapeHtml(catStr)}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Teams</span>
+            <span class="detail-value">${escapeHtml(teamsStr)}</span>
+          </div>
+        </div>
+
+        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">${escapeHtml(contactName)}</a>
+      </div>
+
+      <div class="tournament-highlights">
+        <div class="highlight-box">
+          <span class="highlight-title">Registration Fee</span>
+          <span class="detail-value">${escapeHtml(feeStr)}</span>
+        </div>
+        <div class="highlight-box">
+          <span class="highlight-title">Champion Prize</span>
+          <span class="highlight-prize">${escapeHtml(prizeStr)}</span>
+        </div>
+        <div class="highlight-box">
+          <span class="highlight-title">Broadcast</span>
+          <span class="detail-value">Media & Stream</span>
+        </div>
+      </div>
+    </div>
+  `;
+
+  container.innerHTML = html;
+}
+
+function renderTournamentsList(items) {
+  const dynamicSection = document.querySelector('#dynamic-tournaments-section');
+  const grid = document.querySelector('#tournaments-list');
+  if (!dynamicSection || !grid || !items || items.length === 0) return;
+
+  dynamicSection.style.display = 'block';
+
+  let html = '';
+  const todayStr = new Date().toISOString().split('T')[0];
+
+  items.forEach(item => {
+    const formattedDate = formatEventDate(item.event_date);
+    const timeStr = formatTime(item.start_time, item.end_time);
+    const isPast = item.event_date && item.event_date < todayStr;
+    const statusLabel = isPast ? 'COMPLETED' : 'UPCOMING';
+    const statusClass = isPast ? 'status-completed' : 'status-upcoming';
+
+    const venueStr = item.venue ? (item.location ? `${item.venue}, ${item.location}` : item.venue) : (item.location || 'TBA');
+    const catStr = item.category || item.age_category || 'Open';
+    const teamsStr = item.number_of_teams ? `${item.number_of_teams} Teams` : null;
+    const feeStr = formatFee(item.registration_fee);
+    const matchFeeStr = formatFee(item.match_fee);
+    const waUrl = buildWhatsAppUrl(item.registration_phone, item.title);
+    const contactText = item.registration_contact ? `WhatsApp ${item.registration_contact}` : 'Enquire on WhatsApp';
+
+    let prizesHtml = '';
+    if (item.prize_champion || item.prize_runner_up || item.prize_third_place) {
+      let prizeItems = [];
+      if (item.prize_champion) prizeItems.push(`🥇 <strong>1st:</strong> ${escapeHtml(item.prize_champion)}`);
+      if (item.prize_runner_up) prizeItems.push(`🥈 <strong>2nd:</strong> ${escapeHtml(item.prize_runner_up)}`);
+      if (item.prize_third_place) prizeItems.push(`🥉 <strong>3rd:</strong> ${escapeHtml(item.prize_third_place)}`);
+
+      prizesHtml = `
+        <div class="tournament-prizes-box">
+          <div class="tournament-prizes-title">Trophies & Prizes</div>
+          <div class="tournament-prizes-list">
+            ${prizeItems.join(' • ')}
+          </div>
+        </div>
+      `;
+    }
+
+    html += `
+      <article class="tournament-card-dynamic">
+        <div class="tournament-poster-media">
+          ${item.poster_url ? `
+            <img src="${escapeHtml(item.poster_url)}" alt="${escapeHtml(item.title)}" loading="lazy">
+          ` : `
+            <div class="tournament-poster-fallback">
+              <svg viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0 0 11 15.9V19H7v2h10v-2h-4v-3.1c2.21-.4 4-2.27 4.39-4.94C19.08 10.63 21 8.55 21 8V7c0-1.1-.9-2-2-2z"/></svg>
+              <span style="font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em;">AGES TOURNAMENT</span>
+            </div>
+          `}
+        </div>
+
+        <div class="tournament-card-content">
+          <span class="tournament-status-badge ${statusClass}">${statusLabel}</span>
+          <h3 class="tournament-card-title-dyn">${escapeHtml(item.title)}</h3>
+          ${item.description ? `<p class="tournament-card-desc-dyn">${escapeHtml(item.description)}</p>` : ''}
+
+          <div class="tournament-details-list">
+            ${formattedDate ? `
+              <div class="tournament-detail-row">
+                <span class="tournament-detail-label">Date</span>
+                <span class="tournament-detail-val">${escapeHtml(formattedDate)}</span>
+              </div>
+            ` : ''}
+            ${timeStr ? `
+              <div class="tournament-detail-row">
+                <span class="tournament-detail-label">Time</span>
+                <span class="tournament-detail-val">${escapeHtml(timeStr)}</span>
+              </div>
+            ` : ''}
+            <div class="tournament-detail-row">
+              <span class="tournament-detail-label">Venue</span>
+              <span class="tournament-detail-val">${escapeHtml(venueStr)}</span>
+            </div>
+            <div class="tournament-detail-row">
+              <span class="tournament-detail-label">Category</span>
+              <span class="tournament-detail-val">${escapeHtml(catStr)}</span>
+            </div>
+            ${teamsStr ? `
+              <div class="tournament-detail-row">
+                <span class="tournament-detail-label">Capacity</span>
+                <span class="tournament-detail-val">${escapeHtml(teamsStr)}</span>
+              </div>
+            ` : ''}
+            ${feeStr ? `
+              <div class="tournament-detail-row">
+                <span class="tournament-detail-label">Entry Fee</span>
+                <span class="tournament-detail-val">${escapeHtml(feeStr)}</span>
+              </div>
+            ` : ''}
+            ${matchFeeStr ? `
+              <div class="tournament-detail-row">
+                <span class="tournament-detail-label">Match Fee</span>
+                <span class="tournament-detail-val">${escapeHtml(matchFeeStr)}</span>
+              </div>
+            ` : ''}
+            ${item.format ? `
+              <div class="tournament-detail-row">
+                <span class="tournament-detail-label">Format</span>
+                <span class="tournament-detail-val">${escapeHtml(item.format)}</span>
+              </div>
+            ` : ''}
+          </div>
+
+          ${prizesHtml}
+
+          <div class="tournament-card-actions">
+            <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; text-align: center;">${escapeHtml(contactText)}</a>
+          </div>
+        </div>
+      </article>
+    `;
+  });
+
+  grid.innerHTML = html;
 }
 
 function renderHomeHighlights(items) {
   // Enhances or maintains highlights previews
 }
 
+function formatEventDate(dateStr) {
+  if (!dateStr) return '';
+  if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+    const parts = dateStr.split('-');
+    const year = parts[0];
+    const monthIndex = parseInt(parts[1], 10) - 1;
+    const day = parseInt(parts[2], 10);
+    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    if (monthIndex >= 0 && monthIndex < 12) {
+      return `${day} ${monthNames[monthIndex]} ${year}`;
+    }
+  }
+  const d = new Date(dateStr);
+  return isNaN(d.getTime()) ? dateStr : d.toLocaleDateString('en-MY', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function formatTime(startTime, endTime) {
+  if (!startTime && !endTime) return '';
+  if (startTime && endTime) return `${startTime} – ${endTime}`;
+  return startTime || endTime || '';
+}
+
+function formatFee(fee, fallback = '') {
+  if (fee === null || fee === undefined || fee === '') return fallback;
+  const strVal = String(fee).trim();
+  if (!strVal) return fallback;
+  if (/^\d+(\.\d+)?$/.test(strVal)) {
+    return `RM${strVal}`;
+  }
+  return strVal;
+}
+
+function buildWhatsAppUrl(phoneStr, tournamentTitle) {
+  let cleanPhone = phoneStr ? phoneStr.replace(/[^0-9]/g, '') : '601136644476';
+  if (!cleanPhone.startsWith('60') && cleanPhone.startsWith('0')) {
+    cleanPhone = '60' + cleanPhone.substring(1);
+  }
+  const msg = `Hello, I would like to enquire about registration for ${tournamentTitle || 'the tournament'}.`;
+  return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(msg)}`;
+}
+
 function escapeHtml(str) {
   if (!str) return '';
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
 }
+
